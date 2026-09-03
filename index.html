@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome LINE OA Export">
+<title>นโยบายความเป็นส่วนตัว LINE OA Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#fcfcfd;--panel:#f2f5f9;--ink:#15171c;--mut:#5c6470;--faint:#8b93a0;--line:#e2e6ec;--accent:#c8104f;--accent-ink:#c8104f;--wash:rgba(200,16,79,.06);--ok:#0f7a5a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0f1116;--panel:#171a21;--ink:#e7eaef;--mut:#9aa3b0;--faint:#727b88;--line:#252932;--accent:#ff6a97;--accent-ink:#ff8ab0;--wash:rgba(255,106,151,.09);--ok:#42c79b}}
+:root[data-theme="dark"]{--paper:#0f1116;--panel:#171a21;--ink:#e7eaef;--mut:#9aa3b0;--faint:#727b88;--line:#252932;--accent:#ff6a97;--accent-ink:#ff8ab0;--wash:rgba(255,106,151,.09);--ok:#42c79b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans Thai","Noto Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:64px 28px 112px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 18px}
+h1{font-family:"Noto Serif Thai",Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,40px);line-height:1.3;margin:0 0 14px;text-wrap:balance;letter-spacing:-.01em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;color:var(--faint);font-size:13.5px;margin:0 0 40px;font-variant-numeric:tabular-nums}
+.meta b{color:var(--mut);font-weight:500}
+.tldr{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:22px 26px;display:flex;flex-direction:column;gap:10px;margin:0 0 12px}
+.tldr p{margin:0;font-size:15.5px;line-height:1.7}
+.tldr .lead{font-weight:600;font-size:16px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:26px 0 8px}
+.facts div{padding:16px 18px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 4px}
+.facts dd{margin:0;font-size:15px;font-weight:600;color:var(--ok)}
+@media (max-width:600px){.facts div{border-right:0;border-bottom:1px solid var(--line)}}
+section{display:grid;grid-template-columns:38px 1fr;gap:0 16px;padding-top:34px;margin-top:34px;border-top:1px solid var(--line)}
+.num{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--accent-ink);padding-top:5px;font-variant-numeric:tabular-nums}
+section h2{grid-column:2;margin:0 0 10px;font-family:"Noto Serif Thai",Georgia,serif;font-weight:600;font-size:20px;line-height:1.45}
+section .body{grid-column:2}
+@media (max-width:520px){section{grid-template-columns:1fr}.num{padding:0 0 6px}section h2,section .body{grid-column:1}}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+ul{margin:0 0 14px;padding-left:0;list-style:none}
+li{position:relative;padding-left:20px;margin:8px 0}
+li::before{content:"";position:absolute;left:3px;top:.85em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.65}
+strong{font-weight:600}
+code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;background:var(--wash);color:var(--accent-ink);padding:1.5px 6px;border-radius:5px}
+a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.scroll{overflow-x:auto;margin:4px 0 14px}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:14.5px}
+th,td{text-align:left;padding:11px 14px 11px 0;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:500;padding-bottom:8px}
+td:first-child{white-space:nowrap;padding-right:20px}
+td code{font-size:12.5px}
+tr:last-child td{border-bottom:0}
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="eyebrow">ส่วนขยาย Chrome · LINE OA Export</p>
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<div class="meta">
+<span>ปรับปรุงล่าสุด <b>3 กันยายน 2569</b></span>
+<span>เวอร์ชัน <b>31.0.0</b></span>
+<span>ผู้เผยแพร่ <b>ardcsr@gmail.com</b></span>
+</div>
+
+<div class="tldr">
+<p class="lead">ส่วนขยายนี้ทำงานทั้งหมดในเครื่องของผู้ใช้</p>
+<p>ข้อมูลที่อ่านมาถูกแปลงเป็นไฟล์ CSV และบีบเป็น ZIP ภายในเบราว์เซอร์ แล้วบันทึกลงเครื่องผ่านกลไกดาวน์โหลดปกติของ Chrome ผู้พัฒนาไม่มีเซิร์ฟเวอร์รับข้อมูล ไม่มีระบบวิเคราะห์การใช้งาน ไม่มีการติดตามผู้ใช้ และไม่มีโฆษณา</p>
+</div>
+
+<dl class="facts">
+<div><dt>ส่งออกนอกเครื่อง</dt><dd>ไม่มี</dd></div>
+<div><dt>บัญชีผู้ใช้ / ล็อกอิน</dt><dd>ไม่ต้องมี</dd></div>
+<div><dt>Analytics / โฆษณา</dt><dd>ไม่มี</dd></div>
+</dl>
+
+<section>
+<div class="num">01</div>
+<h2>ส่วนขยายนี้ทำอะไร</h2>
+<div class="body">
+<p>ช่วยผู้ดูแล LINE Official Account ส่งออกข้อมูลของบัญชีที่ตนเองดูแลอยู่ — ข้อความในห้องแชท โน้ต แท็ก ชื่อผู้ติดต่อ และลิงก์ไฟล์แนบ — ให้อยู่ในรูปไฟล์ CSV หนึ่งไฟล์ต่อหนึ่งห้องแชท รวมอยู่ในไฟล์ ZIP เพื่อดาวน์โหลดเก็บไว้เป็นสำเนาสำรอง</p>
+<p>ส่วนขยายทำงานเมื่อผู้ใช้กดไอคอนบนแถบเครื่องมือเท่านั้น และทำงานเฉพาะบนหน้า <code>chat.line.biz</code></p>
+</div>
+</section>
+
+<section>
+<div class="num">02</div>
+<h2>ข้อมูลที่ถูกเข้าถึง</h2>
+<div class="body">
+<ul>
+<li><strong>เนื้อหาการสื่อสารส่วนบุคคล</strong> — ข้อความในห้องแชท โน้ต แท็ก และลิงก์ไฟล์แนบ</li>
+<li><strong>ข้อมูลที่ระบุตัวบุคคลได้</strong> — ชื่อ ชื่อเล่น และรหัสผู้ใช้ของผู้ติดต่อในห้องแชทนั้น</li>
+<li>ข้อมูลถูกอ่านผ่าน API ของ <code>chat.line.biz</code> ด้วยเซสชันที่ผู้ใช้ล็อกอินอยู่แล้วเท่านั้น ส่วนขยายไม่ได้เพิ่มสิทธิ์ใด ๆ ให้ผู้ใช้เกินกว่าที่มีอยู่บนหน้าเว็บ</li>
+<li>ส่วนขยายไม่อ่านรหัสผ่าน ไม่อ่านคุกกี้ ไม่อ่านประวัติการเข้าเว็บ และไม่ทำงานบนเว็บไซต์อื่นนอกเหนือจากที่ระบุไว้ในตารางข้อ 03</li>
+</ul>
+</div>
+</section>
+<section>
+<div class="num">03</div>
+<h2>สิทธิ์ที่ขอ และเหตุผล</h2>
+<div class="body">
+<div class="scroll">
+<table>
+<thead><tr><th>สิทธิ์</th><th>ใช้ทำอะไร</th></tr></thead>
+<tbody>
+<tr><td><code>activeTab</code></td><td>ทำงานกับแท็บที่ผู้ใช้เปิดอยู่ ณ ตอนที่กดไอคอน แทนการขอสิทธิ์เข้าถึงทุกแท็บ</td></tr>
+<tr><td><code>scripting</code></td><td>ฉีดหน้าต่างตั้งค่าและตัวส่งออกเข้าไปในแท็บนั้น เมื่อผู้ใช้กดไอคอนเท่านั้น</td></tr>
+<tr><td><code>chat.line.biz</code></td><td>อ่าน API ของ LINE OA Manager สำหรับบัญชีที่ผู้ใช้ล็อกอินอยู่</td></tr>
+<tr><td><code>chat-content.line.biz</code><br><code>*.line-scdn.net</code><br><code>*.chatcone.net</code><br><code>*.chatcone.com</code></td><td>โหลดรูปและไฟล์แนบที่อ้างถึงในห้องแชทเหล่านั้น เพื่อรวมเข้าไปในไฟล์ ZIP</td></tr>
+</tbody>
+</table>
+</div>
+<p>ไม่มีการติดต่อโฮสต์อื่นนอกจากรายการนี้</p>
+</div>
+</section>
+
+<section>
+<div class="num">04</div>
+<h2>ข้อมูลถูกส่งไปที่ไหน</h2>
+<div class="body">
+<p><strong>ไม่ถูกส่งไปที่ใดทั้งสิ้น</strong> การประมวลผลทุกขั้นเกิดขึ้นในเบราว์เซอร์ของผู้ใช้ ผู้พัฒนาไม่มีเซิร์ฟเวอร์ที่รับข้อมูลจากส่วนขยายนี้ และไม่มีการเรียก API ของบุคคลที่สามใด ๆ</p>
+<p>โค้ดจาวาสคริปต์ทั้งหมดที่ทำงานอยู่ในแพ็กเกจที่ติดตั้ง ไม่มีการโหลดสคริปต์จากภายนอกมารันขณะใช้งาน</p>
+</div>
+</section>
+
+<section>
+<div class="num">05</div>
+<h2>ข้อมูลที่เก็บไว้ในเครื่อง</h2>
+<div class="body">
+<ul>
+<li><code>localStorage</code> — การตั้งค่าที่ผู้ใช้เลือก และจุดที่ทำงานค้างไว้ เพื่อให้ทำต่อจากเดิมได้เมื่อถูกขัดจังหวะกลางทาง</li>
+<li><code>IndexedDB</code> — ผลลัพธ์ของห้องแชทที่ประมวลผลเสร็จแล้ว เพื่อไม่ต้องดึงข้อมูลซ้ำ</li>
+</ul>
+<p>ทั้งสองอย่างอยู่ในเครื่องของผู้ใช้เท่านั้น ลบได้เองโดยการล้างข้อมูลเว็บไซต์ของ <code>chat.line.biz</code> หรือถอนการติดตั้งส่วนขยาย</p>
+</div>
+</section>
+<section>
+<div class="num">06</div>
+<h2>การใช้งานข้อมูล</h2>
+<div class="body">
+<p>ผู้พัฒนาไม่ขายข้อมูลผู้ใช้ ไม่โอนข้อมูลให้บุคคลที่สาม ไม่ใช้ข้อมูลเพื่อวัตถุประสงค์อื่นนอกเหนือจากหน้าที่หลักของส่วนขยาย และไม่ใช้ข้อมูลเพื่อประเมินความน่าเชื่อถือทางการเงินหรือการให้สินเชื่อ</p>
+</div>
+</section>
+
+<section>
+<div class="num">07</div>
+<h2>ความรับผิดชอบของผู้ใช้</h2>
+<div class="body">
+<p>ไฟล์ที่ส่งออกมีเนื้อหาการสนทนาของบุคคลจริง ผู้ใช้มีหน้าที่จัดเก็บและใช้งานไฟล์เหล่านั้นให้สอดคล้องกับพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) นโยบายขององค์กรตนเอง และข้อกำหนดการใช้บริการของ LINE</p>
+</div>
+</section>
+
+<section>
+<div class="num">08</div>
+<h2>การเปลี่ยนแปลงนโยบาย</h2>
+<div class="body">
+<p>หากมีการแก้ไขนโยบายนี้ จะปรับวันที่ด้านบนของหน้า และแจ้งไว้ในบันทึกการเปลี่ยนแปลงของส่วนขยายเวอร์ชันถัดไป</p>
+</div>
+</section>
+
+<section>
+<div class="num">09</div>
+<h2>ติดต่อ</h2>
+<div class="body">
+<p>คำถามเกี่ยวกับนโยบายนี้ ติดต่อ <a href="mailto:ardcsr@gmail.com">ardcsr@gmail.com</a></p>
+</div>
+</section>
+
+<footer>
+LINE OA Export เป็นเครื่องมือของผู้พัฒนาอิสระ ไม่ได้มีความเกี่ยวข้องกับ ไม่ได้เป็นตัวแทนของ และไม่ได้รับการรับรองจาก LY Corporation หรือ LINE
+</footer>
+</div>
+</body>
+</html>
