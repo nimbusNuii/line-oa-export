@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome LINE OA Export">
-<title>นโยบายความเป็นส่วนตัว LINE OA Export</title>
+<meta name="description" content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome OA Chat Exporter">
+<title>นโยบายความเป็นส่วนตัว OA Chat Exporter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -54,11 +54,11 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:v
 </head>
 <body>
 <div class="wrap">
-<p class="eyebrow">ส่วนขยาย Chrome · LINE OA Export</p>
+<p class="eyebrow">ส่วนขยาย Chrome · OA Chat Exporter</p>
 <h1>นโยบายความเป็นส่วนตัว</h1>
 <div class="meta">
-<span>ปรับปรุงล่าสุด <b>3 กันยายน 2569</b></span>
-<span>เวอร์ชัน <b>31.0.0</b></span>
+<span>ปรับปรุงล่าสุด <b>8 กันยายน 2569</b></span>
+<span>เวอร์ชัน <b>1.3.0</b></span>
 <span>ผู้เผยแพร่ <b>ardcsr@gmail.com</b></span>
 </div>
 
@@ -89,6 +89,7 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:v
 <ul>
 <li><strong>เนื้อหาการสื่อสารส่วนบุคคล</strong> — ข้อความในห้องแชท โน้ต แท็ก และลิงก์ไฟล์แนบ</li>
 <li><strong>ข้อมูลที่ระบุตัวบุคคลได้</strong> — ชื่อ ชื่อเล่น และรหัสผู้ใช้ของผู้ติดต่อในห้องแชทนั้น</li>
+<li><strong>ชื่อพนักงานในทีมของผู้ใช้</strong> — ไฟล์ผลลัพธ์มีชื่อผู้ดูแลห้องแชท (<code>assignedTo</code>) และชื่อผู้เขียนโน้ต ซึ่งเป็นข้อมูลส่วนบุคคลของทีมผู้ใช้เอง</li>
 <li>ข้อมูลถูกอ่านผ่าน API ของ <code>chat.line.biz</code> ด้วยเซสชันที่ผู้ใช้ล็อกอินอยู่แล้วเท่านั้น ส่วนขยายไม่ได้เพิ่มสิทธิ์ใด ๆ ให้ผู้ใช้เกินกว่าที่มีอยู่บนหน้าเว็บ</li>
 <li>ส่วนขยายไม่อ่านรหัสผ่าน ไม่อ่านคุกกี้ ไม่อ่านประวัติการเข้าเว็บ และไม่ทำงานบนเว็บไซต์อื่นนอกเหนือจากที่ระบุไว้ในตารางข้อ 03</li>
 </ul>
@@ -104,8 +105,9 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:v
 <tbody>
 <tr><td><code>activeTab</code></td><td>ทำงานกับแท็บที่ผู้ใช้เปิดอยู่ ณ ตอนที่กดไอคอน แทนการขอสิทธิ์เข้าถึงทุกแท็บ</td></tr>
 <tr><td><code>scripting</code></td><td>ฉีดหน้าต่างตั้งค่าและตัวส่งออกเข้าไปในแท็บนั้น เมื่อผู้ใช้กดไอคอนเท่านั้น</td></tr>
+<tr><td><code>storage</code></td><td>จำการตั้งค่าที่ผู้ใช้เลือกไว้ในเครื่องผ่าน <code>chrome.storage.local</code> ไม่ได้ใช้เก็บเนื้อหาแชท</td></tr>
 <tr><td><code>chat.line.biz</code></td><td>อ่าน API ของ LINE OA Manager สำหรับบัญชีที่ผู้ใช้ล็อกอินอยู่</td></tr>
-<tr><td><code>chat-content.line.biz</code><br><code>*.line-scdn.net</code><br><code>*.chatcone.net</code><br><code>*.chatcone.com</code></td><td>โหลดรูปและไฟล์แนบที่อ้างถึงในห้องแชทเหล่านั้น เพื่อรวมเข้าไปในไฟล์ ZIP</td></tr>
+<tr><td><code>chat-content.line.biz</code><br><code>*.line-scdn.net</code></td><td>โหลดรูปและไฟล์แนบที่อ้างถึงในห้องแชทเหล่านั้น เพื่อรวมเข้าไปในไฟล์ ZIP</td></tr>
 </tbody>
 </table>
 </div>
@@ -127,8 +129,9 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:v
 <h2>ข้อมูลที่เก็บไว้ในเครื่อง</h2>
 <div class="body">
 <ul>
-<li><code>localStorage</code> — การตั้งค่าที่ผู้ใช้เลือก และจุดที่ทำงานค้างไว้ เพื่อให้ทำต่อจากเดิมได้เมื่อถูกขัดจังหวะกลางทาง</li>
-<li><code>IndexedDB</code> — ผลลัพธ์ของห้องแชทที่ประมวลผลเสร็จแล้ว เพื่อไม่ต้องดึงข้อมูลซ้ำ</li>
+<li><code>chrome.storage.local</code> — การตั้งค่าที่ผู้ใช้เลือกไว้ในหน้าต่างของส่วนขยาย</li>
+<li><code>IndexedDB</code> (ฐานข้อมูลชื่อ <code>lx_cache</code> ของ <code>chat.line.biz</code>) — เก็บสามอย่าง: (ก) ผลลัพธ์ CSV ของห้องแชทที่ประมวลผลเสร็จแล้ว เพื่อไม่ต้องดึงข้อมูลซ้ำ (ข) จุดที่ทำงานค้างไว้ เพื่อให้ทำต่อจากเดิมได้เมื่อถูกขัดจังหวะกลางทาง (ค) สำเนารายการห้องแชท ซึ่ง<strong>มีชื่อผู้ติดต่ออยู่ด้วย</strong> เพื่อไม่ต้องไล่รายการห้องใหม่ทั้งหมดตอนทำงานต่อ</li>
+<li><code>localStorage</code> ของหน้า <code>chat.line.biz</code> — สถานะหน้าต่างตั้งค่า สถานะการยืนยันรหัสเข้าใช้งาน และจุดพักของเวอร์ชันเก่า (อ่านเพื่อย้ายข้อมูลแล้วลบทิ้ง)</li>
 </ul>
 <p>ทั้งสองอย่างอยู่ในเครื่องของผู้ใช้เท่านั้น ลบได้เองโดยการล้างข้อมูลเว็บไซต์ของ <code>chat.line.biz</code> หรือถอนการติดตั้งส่วนขยาย</p>
 </div>
@@ -166,7 +169,7 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:v
 </section>
 
 <footer>
-LINE OA Export เป็นเครื่องมือของผู้พัฒนาอิสระ ไม่ได้มีความเกี่ยวข้องกับ ไม่ได้เป็นตัวแทนของ และไม่ได้รับการรับรองจาก LY Corporation หรือ LINE
+OA Chat Exporter เป็นเครื่องมือของผู้พัฒนาอิสระ ไม่ได้มีความเกี่ยวข้องกับ ไม่ได้เป็นตัวแทนของ และไม่ได้รับการรับรองจาก LY Corporation หรือ LINE
 </footer>
 </div>
 </body>
